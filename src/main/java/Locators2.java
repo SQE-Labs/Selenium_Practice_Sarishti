@@ -6,6 +6,7 @@ import java.time.Duration;
 
 public class Locators2 {
     public static void main(String[] args) {
+        //initialization of chrome driver
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://www.hackerrank.com/auth/login");
