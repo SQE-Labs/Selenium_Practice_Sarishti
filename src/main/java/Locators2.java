@@ -14,5 +14,6 @@ public class Locators2 {
         driver.findElement(By.className("c-cUYkx")).click();
         driver.findElement(By.className("ui-icon-chevron-down")).click();
         driver.findElement(By.xpath("//li[@class='profile-nav-item'][9]")).click();
+        driver.close();
     }
 }
