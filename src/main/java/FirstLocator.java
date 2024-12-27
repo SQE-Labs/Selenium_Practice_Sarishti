@@ -4,11 +4,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Locators {
+public class FirstLocator {
     //implicit wait : 5 seconds time out
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        //System.out.println(getString(driver));
         driver.get("https://www.hackerrank.com/auth/login");
         driver.findElement(By.name("username")).sendKeys("guptasrishti428@gmail.com");
         driver.findElement(By.name("password")).sendKeys("sarishtimail");
@@ -31,5 +32,17 @@ public class Locators {
         driver.findElement(By.className("c-cUYkx")).click();
 
 
+    }
+
+    public static String getString(WebDriver driver)
+    {
+        driver.get("https://www.hackerrank.com/auth/login");
+        driver.findElement(By.name("username")).sendKeys("guptasrishti428@gmail.com");
+        driver.findElement(By.name("password")).sendKeys("sarishtimail");
+        driver.findElement(By.className("c-cUYkx")).click();
+        String Passwordtext = driver.findElement(By.cssSelector("h3.c-jiIMLs")).getText();
+        String[] SplitText = Passwordtext.split(" ");
+        String StringText = SplitText[2];
+        return StringText;
     }
 }
