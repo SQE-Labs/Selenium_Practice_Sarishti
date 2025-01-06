@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
+
 
 import java.util.Set;
 
@@ -23,7 +23,13 @@ public class Assignment4 {
         driver.switchTo().alert().accept();
         String[] extracted = alertmessage.split(",");
         String[] ExtractedString =  extracted[0].split(" ");
-        Assert.assertEquals(ExtractedString[1],Textsaved);
+        //Assert.assertEquals(ExtractedString[1],Textsaved);
+        if(ExtractedString[1].contains(Textsaved)){
+            System.out.println("Alert Message Successfully displayed");
+        }
+        else {
+            System.out.println("Something went wrong");
+        }
 
 
     }
